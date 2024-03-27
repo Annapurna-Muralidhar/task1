@@ -9,14 +9,31 @@
 				<Page title="{i18n>peoplePageTitle}">
 					<content>
 						<Table
-							id="productList" items="{/Product}"
-							>
+							id="productList" items="{path :'/Product' , parameters : {$$updateGroupId : 'peopleGroup'}}"
+							mode="SingleSelectLeft">
 
 							<headerToolbar>
 								<OverflowToolbar>
 									<content>
 										<ToolbarSpacer/>
-										
+										<Button
+											id="addUserButton"
+											icon="sap-icon://add"
+											tooltip="{i18n>createButtonText}"
+											press=".onCreate">
+											<layoutData>
+												<OverflowToolbarLayoutData priority="NeverOverflow"/>
+											</layoutData>
+										</Button>
+										<Button
+											id="deleteUserButton"
+											icon="sap-icon://delete"
+											tooltip="{i18n>deleteButtonText}"
+											press=".onDelete">
+											<layoutData>
+												<OverflowToolbarLayoutData priority="NeverOverflow"/>
+											</layoutData>
+										</Button>
 										</content>
 								</OverflowToolbar>
 							</headerToolbar>
@@ -37,16 +54,26 @@
 							</columns>
 							<items>
 								<ColumnListItem>
-									<cells>
-										<ObjectIdentifier title="{p_id}"/>
-										<Text text="{name}"/>
-										<ObjectNumber number = "{costPrice}" />
-										<ObjectNumber number = "{sellPrice}" />
-									</cells>
+									<cells><Input  value="{p_id}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
+									<cells><Input  value="{name}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
+									<cells><Input  value="{costPrice}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
+									<cells><Input  value="{sellPrice}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
 								</ColumnListItem>
 							</items>
 						</Table>
 					</content>
+					<footer>
+						<Toolbar visible="{appView>/hasUIChanges}">
+							<ToolbarSpacer/>
+							<Button
+								id="saveButton"
+								type="Emphasized"
+								text="{i18n>saveButtonText}"
+								enabled="{= ${message>/}.length === 0 &amp;&amp; ${appView>/usernameEmpty} === false }"
+								press=".onSave"/>
+							
+						</Toolbar>
+					</footer>
 				</Page>
 			</pages>
 		</App>

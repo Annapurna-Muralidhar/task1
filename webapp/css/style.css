@@ -1,0 +1,59 @@
+/* Style the table */
+#productList {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  /* Style the table columns */
+  #userNameColumn,
+  #firstNameColumn,
+  #lastNameColumn,
+  #ageColumn {
+    width: 25%;
+  }
+  
+  /* Style the input fields */
+  .sapMInputBase {
+    width: 100%;
+  }
+  
+  /* Style the buttons in the toolbar */
+  .sapMBtn {
+    margin-left: 0.5rem;
+  }
+  
+  /* Style the footer toolbar */
+  footer {
+    margin-top: 1rem;
+  }
+  
+  /* Style the save button */
+  #saveButton {
+    margin-right: 1rem;
+  }
+  /* Style the table */
+#productList {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+  
+  /* Style the table header */
+  #productList thead th {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  /* Style the table body */
+  #productList tbody td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+  }
+  
+  /* Style alternating rows */
+  #productList tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
