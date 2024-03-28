@@ -10,7 +10,7 @@
 					<content>
 						<Table
 							id="productList" items="{path :'/Product' , parameters : {$$updateGroupId : 'peopleGroup'}}"
-							mode="SingleSelectLeft">
+							mode="SingleSelectLeft">                                        
 
 							<headerToolbar>
 								<OverflowToolbar>
@@ -57,7 +57,7 @@
 									<cells><Input  value="{p_id}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
 									<cells><Input  value="{name}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
 									<cells><Input  value="{costPrice}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
-									<cells><Input  value="{sellPrice}" valueLiveUpdate="true" liveChange=".onInputChange"/></cells>
+									<cells><Input  value="{sellPrice}" valueLiveUpdate="true" liveChange=".onInputChange" /></cells>
 								</ColumnListItem>
 							</items>
 						</Table>
